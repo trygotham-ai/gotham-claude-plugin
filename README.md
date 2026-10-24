@@ -1,7 +1,7 @@
 # Gotham Legal AI for Claude
 
 **Private preparation draft — not published and not ready to connect.**
-The configured Claude-only host, `claude-mcp.trygotham.io`, is proposed and
+The configured Claude-only host, `cm.trygotham.io`, is proposed and
 has not been deployed by this preparation task. Do not replace it with
 Gotham's ChatGPT endpoint. The Claude runtime and its authentication must be
 released independently before this package can pass live acceptance.

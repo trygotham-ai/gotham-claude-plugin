@@ -2,7 +2,7 @@
   "mcpServers": {
     "gotham-claude": {
       "type": "http",
-      "url": "https://claude-mcp.trygotham.io/mcp"
+      "url": "https://cm.trygotham.io/mcp"
     }
   }
 }

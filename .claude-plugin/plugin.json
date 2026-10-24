@@ -1,7 +1,7 @@
 {
   "name": "gotham-legal-ai",
   "displayName": "Gotham Legal AI",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Research Indian legal authorities with source links and work with Gotham matters, workflows, playbooks and tabular reviews, with approval in Gotham before changes execute.",
   "author": {
     "name": "Gotham Inc",
