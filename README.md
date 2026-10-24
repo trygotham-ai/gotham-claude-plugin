@@ -1,92 +1,144 @@
+<p align="center">
+  <a href="https://trygotham.io"><img src="./assets/logo.png" width="88" height="88" alt="Gotham Legal AI logo"></a>
+</p>
+
 # Gotham Legal AI for Claude
 
-**Private preparation draft — not published and not ready to connect.**
-The configured Claude-only host, `cm.trygotham.io`, is proposed and
-has not been deployed by this preparation task. Do not replace it with
-Gotham's ChatGPT endpoint. The Claude runtime and its authentication must be
-released independently before this package can pass live acceptance.
+**Indian legal research. Connected legal work. Your approval.**
 
-Gotham brings legal research and workspace operations into Claude. The
-intended connector searches supported Indian case law and statutes with
-links to Gotham's source readers, and finds accessible matters, workflows,
-playbooks and tabular reviews. It can prepare changes for the user to
-review and approve in Gotham. Research output needs a qualified
-professional's review; search snippets do not establish subsequent
-treatment, enforceability or complete coverage.
+Gotham Legal AI is a Claude plugin and remote Model Context Protocol (MCP)
+integration being prepared by **Gotham Inc**. It is designed to bring Indian
+case law, statutes and your authorized Gotham workspace into a single
+conversation: find the source, find the matter and prepare the next step.
 
-## Intended setup after the separate service is released
+[Explore Gotham](https://trygotham.io) · [Contact the team](mailto:support@trygotham.io) · [Privacy](https://trygotham.io/privacy)
 
-1. Install the Gotham Legal AI plugin in a supported Claude app.
-2. In the plugin's Connectors tab, add the Gotham connector and sign in to
-   Gotham through OAuth. In Claude Code, use `/mcp` to authenticate the
-   plugin's remote server. Never paste a password, bearer token or API key
-   into a chat or this package.
-3. Select a workspace by its name in your request. A workspace
-   administrator must have enabled the separately released Claude
-   connection. Signing in does not grant access to other workspaces.
-4. Read tools require `gotham:read`. Preparing a change additionally
-   requires `gotham:write`; the service must enforce the granted scopes.
-5. For a change, review the returned summary and open the Gotham approval
-   link. The request executes only after approval on that page. The
-   connection's OAuth consent is separate from approval of each change.
+> **Private preview.** Not published or ready to connect. The dedicated
+> service at `https://cm.trygotham.io/mcp` is not deployed by this
+> preparation. Claude sign-in, permissions and live tool tests remain
+> pending. Package validation is separate from directory approval.
 
-Authentication and these setup steps have **not** yet been verified in
-Claude. Directory listing and plugin publication are separate submissions.
+## Legal research and workspace capabilities
 
-## Example requests
+The planned integration connects research to the work around it.
 
-- Find Indian authorities on limitation for a contract claim, with links.
-- In my named Gotham workspace, open a matter and show its current status.
-- Find a published workflow and the named documents it needs, and prepare
-  its run for my approval.
-- Show an existing playbook and prepare a new empty draft.
-- Prepare a two-document tabular review with a confidentiality-period
-  column. Creating a review does not start its analysis.
+| Your task | Designed capabilities |
+| --- | --- |
+| Research Indian law | Search supported Indian case law and statutes, with links to the underlying sources in Gotham. |
+| Find the right record | Discover accessible workspaces, documents, matters, workflows, playbooks and tabular reviews by name. |
+| Organize a matter | Prepare a saved search, a new matter or a matter rename for approval. |
+| Run a legal workflow | Prepare a published workflow with its declared inputs. Runs use workspace credits. |
+| Set up contract review | Prepare an empty draft playbook or a tabular review. Creating a review does not start analysis. |
+| Verify a change | Check the stored request's authoritative status and read the resulting record. |
 
-Names are resolved through authorized discovery; users should not have to
-look up internal IDs. Workflow runs use workspace credits. Prepared
-requests can expire and must not be represented as completed work.
+For lawyers, law firms and in-house legal teams working with Indian legal
+sources and existing Gotham records. This plugin exposes a focused set of
+capabilities, rather than every feature of the wider Gotham platform.
 
-## What this package runs and sends
+## Example prompts
 
-This package contains Markdown instructions, a JSON manifest, one image
-and a remote MCP configuration. It has no shell commands, local MCP
-process, hooks, agents, package installers, background monitors, channels,
-embedded credentials or automatic update scripts. Installing the package
-does not start a workflow or create a Gotham record.
+Use workspace and record names you recognize. The integration resolves
+internal IDs through authorized discovery and clarifies duplicate names.
 
-When a user asks for Gotham work, Claude sends the selected tool arguments
-to the configured Gotham Claude service over HTTPS. Intended arguments
-include the research query or the chosen workspace/resource handles and
-requested change. Gotham returns authorized, bounded metadata, source
-links, approval links and operation status. It does not ask Claude to
-export its memory, conversation history, unrelated files or credentials.
-Users should avoid including unrelated confidential material in queries.
+- **Legal research:** “Find Indian authorities on limitation for a contract claim, with links to the original sources.”
+- **Matter management:** “In my Litigation workspace, find the Acme supply dispute and show its status.”
+- **Workflow preparation:** “Find the published comparison workflow and prepare a run using the original and revised NDA in my Review workspace.”
+- **Contract review:** “Prepare a tabular review of those two NDAs with a confidentiality-period column.”
+- **After approval:** “Check whether that approved request finished and open the resulting record.”
 
-The planned service uses the user's Gotham permissions and the product's
-normal access and credit checks. Its data handling and retention must be
-verified against the isolated deployed implementation before the directory
-data-handling answers are attested. This draft does not promise a deployed
-privacy implementation or automatic continuation in Claude. Check status
-explicitly after approval; MCP Events support is not claimed.
+These examples are not test-pass receipts. Names must match resources the
+connected user can access.
 
-## Privacy and support
+## You approve changes in Gotham
 
-Developer: **Gotham Inc**. Contact: **support@trygotham.io**.
+1. **Prepare.** Claude asks Gotham to store the requested change and returns
+   its summary, consequences, expiry and approval link.
+2. **Review and approve.** Check the exact request on its Gotham page. It
+   executes only after approval there. OAuth consent and a chat reply do
+   not replace approval of a stored request.
+3. **Check the result.** Ask Claude to check that request's status. A
+   workflow may continue after approval; a prepared request is not a
+   completed run. Expired requests need a new preparation.
 
-- [Gotham privacy policy](https://trygotham.io/privacy)
-- [Gotham terms](https://trygotham.io/terms)
-- [Support](https://trygotham.io/contact)
+Automatic continuation and background monitoring in Claude are not
+promised by this preview.
 
-The repository is private during preparation. Its README must become
-publicly accessible, or a public setup guide must be published, before
-listing launch. The current license reserves all rights pending Gotham's
-public-distribution decision.
+## Connect after release
 
-## Validation and release status
+You will need a Gotham account, access to the intended workspace, relevant
+product entitlements and the separately released Claude connection
+enabled by a workspace administrator.
 
-Run `claude plugin validate . --strict` with a current Claude Code version
-from this folder, then validate the source commit in the developer portal.
-Syntax validation does not prove OAuth, tool behavior or directory
-approval. Every advertised tool must pass through the separate service in
-Claude and MCP Inspector before the test confirmation can be selected.
+Once the service is released and setup is verified:
+
+1. Install Gotham Legal AI in a supported Claude app.
+2. Connect Gotham through the plugin's Connectors tab and sign in using
+   OAuth. In Claude Code, use `/mcp` to authenticate the remote server.
+3. Name the workspace you want. A workspace open in your browser does not
+   establish the connector's workspace.
+4. Grant `gotham:read` for reads. Preparing a change additionally requires
+   `gotham:write`; the service must enforce the granted scopes.
+
+Never paste passwords, tokens or API keys into a conversation or this
+repository. This private preview has no public marketplace install command.
+The Claude connection is released independently; do not substitute another
+provider's endpoint.
+
+## Privacy, access and legal-source limits
+
+The planned service must follow the connected user's Gotham permissions,
+workspace rules, product entitlements and credit checks. Claude sends
+selected tool arguments over HTTPS: a research query, chosen
+workspace/resource handles or the requested change. Gotham returns bounded
+metadata, source links, approval links and operation status.
+
+The package contains a skill, JSON configuration and a logo. It has no
+shell commands, local MCP process, hooks, installers, background agents or
+embedded credentials. It does not ask Claude to export unrelated files,
+memory or conversation history. Service data handling and retention still
+need verification against the isolated deployment before any directory
+attestation.
+
+Legal output requires qualified professional review. Confirm source
+coverage, dates and original text. Search alone does not establish that a
+case is good law, an interpretation is correct or a term is enforceable.
+
+## For developers and reviewers
+
+One skill, `use-gotham`, and one remote MCP configuration:
+
+```json
+{
+  "mcpServers": {
+    "gotham-claude": {
+      "type": "http",
+      "url": "https://cm.trygotham.io/mcp"
+    }
+  }
+}
+```
+
+Validate with the official Claude Code CLI:
+
+```sh
+claude plugin validate . --strict
+```
+
+Then validate the exact source commit in the directory portal. Source
+checks do not verify OAuth or live behavior. Every advertised tool still
+needs acceptance testing in Claude and MCP Inspector before the testing
+confirmation can be selected. Source and documentation remain private
+until an authorized public release.
+
+## About Gotham Inc
+
+[Gotham](https://trygotham.io) builds a connected workspace for legal
+research and legal operations, with an India-first focus. This repository
+contains the Claude plugin package, not the hosted service or customer data.
+
+**Developer:** Gotham Inc · **Contact:** [support@trygotham.io](mailto:support@trygotham.io)
+
+[Website](https://trygotham.io) · [Support](https://trygotham.io/contact) · [Privacy policy](https://trygotham.io/privacy) · [Terms](https://trygotham.io/terms) · [License](./LICENSE)
+
+Copyright © 2026 Gotham Inc. All rights reserved. Public distribution
+requires Gotham's authorization under the [package license](./LICENSE).
