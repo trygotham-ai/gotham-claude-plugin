@@ -1,7 +1,7 @@
 {
   "name": "gotham-legal-ai",
   "displayName": "Gotham Legal AI",
-  "version": "0.1.5",
+  "version": "0.1.6",
   "description": "Indian legal research, case law and statutes in Claude, with Gotham matter workflows and contract review preparation through MCP. Approve changes in Gotham.",
   "author": {
     "name": "Gotham Inc",
@@ -25,7 +25,7 @@
     "legal-workflows"
   ],
   "icon": "./assets/logo.png",
-  "documentationUrl": "https://cm.trygotham.io/docs",
+  "documentationUrl": "https://trygotham.io/docs/claude",
   "supportUrl": "https://trygotham.io/contact",
   "privacyPolicyUrl": "https://trygotham.io/privacy",
   "termsOfServiceUrl": "https://trygotham.io/terms"

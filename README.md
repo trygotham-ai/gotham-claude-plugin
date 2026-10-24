@@ -17,7 +17,7 @@ conversation: find the source, find the matter and prepare the next step.
 > `https://cm.trygotham.io/mcp`. Claude sign-in, permission consent and
 > live tool acceptance testing are still required before directory submission.
 > The plugin and connector are not publicly approved or published.
-> [Setup and permissions](https://cm.trygotham.io/docs).
+> [Setup and permissions](https://trygotham.io/docs/claude).
 
 ## Legal research and workspace capabilities
 
@@ -82,7 +82,7 @@ enable Claude separately at [Claude workspace access](https://cm.trygotham.io/se
    `gotham:write`; approval of each stored change is still required in Gotham.
 
 Never paste passwords, tokens or API keys into a conversation or this
-repository. This private preview has no public marketplace install command.
+repository. This preview has no public marketplace install command.
 The Claude connection is released independently; do not substitute another
 provider's endpoint.
 
@@ -101,7 +101,7 @@ memory or conversation history. Stored approval requests can contain the propose
 change; connector audits retain metadata rather than full arguments or results.
 Decided requests and connector audit metadata are retained for up to 13 months;
 undecided requests are removed seven days after expiry. Product records follow
-the workspace retention policy. See the [service documentation](https://cm.trygotham.io/docs)
+the workspace retention policy. See the [service documentation](https://trygotham.io/docs/claude)
 and [privacy policy](https://trygotham.io/privacy) for details.
 
 Legal output requires qualified professional review. Confirm source
@@ -132,8 +132,8 @@ claude plugin validate . --strict
 Then validate the exact source commit in the directory portal. Source
 checks do not verify OAuth or live behavior. Every advertised tool still
 needs acceptance testing in Claude and MCP Inspector before the testing
-confirmation can be selected. Source and documentation remain private
-until an authorized public release.
+confirmation can be selected. The plugin source and documentation are public;
+the hosted integration remains a preview and directory publication is separate.
 
 ## About Gotham Inc
 
