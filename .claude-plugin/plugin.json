@@ -1,0 +1,28 @@
+{
+  "name": "gotham-legal-ai",
+  "displayName": "Gotham Legal AI",
+  "version": "0.1.1",
+  "description": "Research Indian legal authorities with source links and work with Gotham matters, workflows, playbooks and tabular reviews, with approval in Gotham before changes execute.",
+  "author": {
+    "name": "Gotham Inc",
+    "url": "https://trygotham.io",
+    "email": "support@trygotham.io"
+  },
+  "homepage": "https://trygotham.io",
+  "repository": "https://github.com/trygotham-ai/gotham-claude-plugin",
+  "license": "LicenseRef-Gotham-Proprietary",
+  "keywords": [
+    "legal-research",
+    "indian-law",
+    "case-law",
+    "statutes",
+    "matters",
+    "contract-review",
+    "due-diligence"
+  ],
+  "icon": "./assets/logo.png",
+  "documentationUrl": "https://github.com/trygotham-ai/gotham-claude-plugin#readme",
+  "supportUrl": "https://trygotham.io/contact",
+  "privacyPolicyUrl": "https://trygotham.io/privacy",
+  "termsOfServiceUrl": "https://trygotham.io/terms"
+}
