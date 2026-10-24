@@ -1,7 +1,7 @@
 {
   "name": "gotham-legal-ai",
   "displayName": "Gotham Legal AI",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "description": "Indian legal research, case law and statutes in Claude, with Gotham matter workflows and contract review preparation through MCP. Approve changes in Gotham.",
   "author": {
     "name": "Gotham Inc",
