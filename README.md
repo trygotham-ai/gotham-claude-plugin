@@ -7,22 +7,23 @@
 **Indian legal research. Connected legal work. Your approval.**
 
 Gotham Legal AI is a Claude plugin and remote Model Context Protocol (MCP)
-integration being prepared by **Gotham Inc**. It is designed to bring Indian
+integration from **Gotham Inc**. It brings Indian
 case law, statutes and your authorized Gotham workspace into a single
 conversation: find the source, find the matter and prepare the next step.
 
 [Explore Gotham](https://trygotham.io) · [Contact the team](mailto:support@trygotham.io) · [Privacy](https://trygotham.io/privacy)
 
-> **Private preview.** Not published or ready to connect. The dedicated
-> service at `https://cm.trygotham.io/mcp` is not deployed by this
-> preparation. Claude sign-in, permissions and live tool tests remain
-> pending. Package validation is separate from directory approval.
+> **Private preview.** The dedicated service is deployed at
+> `https://cm.trygotham.io/mcp`. Claude sign-in, permission consent and
+> live tool acceptance testing are still required before directory submission.
+> The plugin and connector are not publicly approved or published.
+> [Setup and permissions](https://cm.trygotham.io/docs).
 
 ## Legal research and workspace capabilities
 
-The planned integration connects research to the work around it.
+The integration connects research to the work around it.
 
-| Your task | Designed capabilities |
+| Your task | Capabilities |
 | --- | --- |
 | Research Indian law | Search supported Indian case law and statutes, with links to the underlying sources in Gotham. |
 | Find the right record | Discover accessible workspaces, documents, matters, workflows, playbooks and tabular reviews by name. |
@@ -63,21 +64,22 @@ connected user can access.
 Automatic continuation and background monitoring in Claude are not
 promised by this preview.
 
-## Connect after release
+## Connect the private preview
 
-You will need a Gotham account, access to the intended workspace, relevant
-product entitlements and the separately released Claude connection
-enabled by a workspace administrator.
+You need an existing Gotham account with a verified email, accepted workspace
+membership and relevant product entitlements. A workspace owner or admin must
+enable Claude separately at [Claude workspace access](https://cm.trygotham.io/settings).
 
-Once the service is released and setup is verified:
-
-1. Install Gotham Legal AI in a supported Claude app.
-2. Connect Gotham through the plugin's Connectors tab and sign in using
-   OAuth. In Claude Code, use `/mcp` to authenticate the remote server.
+1. Add a custom connector in Claude using `https://cm.trygotham.io/mcp`.
+   In Claude Code, use `/mcp` to authenticate the remote server configured
+   by this plugin.
+2. Use the main Gotham app’s existing sign-in and review the Claude permissions.
+   If you are already signed in to Gotham, no second password is requested.
+   Claude receives its own scoped token. Signing out of Gotham ends the linked connection.
 3. Name the workspace you want. A workspace open in your browser does not
    establish the connector's workspace.
-4. Grant `gotham:read` for reads. Preparing a change additionally requires
-   `gotham:write`; the service must enforce the granted scopes.
+4. Read operations use `gotham:read`. Preparing a change additionally requires
+   `gotham:write`; approval of each stored change is still required in Gotham.
 
 Never paste passwords, tokens or API keys into a conversation or this
 repository. This private preview has no public marketplace install command.
@@ -86,7 +88,7 @@ provider's endpoint.
 
 ## Privacy, access and legal-source limits
 
-The planned service must follow the connected user's Gotham permissions,
+The service follows the connected user's Gotham permissions,
 workspace rules, product entitlements and credit checks. Claude sends
 selected tool arguments over HTTPS: a research query, chosen
 workspace/resource handles or the requested change. Gotham returns bounded
@@ -95,9 +97,12 @@ metadata, source links, approval links and operation status.
 The package contains a skill, JSON configuration and a logo. It has no
 shell commands, local MCP process, hooks, installers, background agents or
 embedded credentials. It does not ask Claude to export unrelated files,
-memory or conversation history. Service data handling and retention still
-need verification against the isolated deployment before any directory
-attestation.
+memory or conversation history. Stored approval requests can contain the proposed
+change; connector audits retain metadata rather than full arguments or results.
+Decided requests and connector audit metadata are retained for up to 13 months;
+undecided requests are removed seven days after expiry. Product records follow
+the workspace retention policy. See the [service documentation](https://cm.trygotham.io/docs)
+and [privacy policy](https://trygotham.io/privacy) for details.
 
 Legal output requires qualified professional review. Confirm source
 coverage, dates and original text. Search alone does not establish that a
